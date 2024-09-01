@@ -19,6 +19,7 @@ class Solution {
         prob[start_node] = 1.0;
 
         while (!pq.empty()) {
+            // pop the node with the largest probability from the queue
             const auto [cur_prob, cur_node] = pq.top();
             pq.pop();
 
@@ -26,6 +27,7 @@ class Solution {
                 return cur_prob;
             }
 
+            // for this current node, let's go through each of the neighbors
             for (const auto [next_prob, next_node] : graph[cur_node]) {
                 auto new_prob = cur_prob * next_prob;
                 if (new_prob > prob[next_node]) {
