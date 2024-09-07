@@ -11,3 +11,9 @@ cc_library(
     hdrs = ["string_ops.h"],
     visibility = ["//main:__pkg__"],
 )
+
+cc_library(
+    name = "leetcode-ds",
+    hdrs = ["leetcode-ds.h"],
+    visibility = ["//main:__pkg__"],
+)
