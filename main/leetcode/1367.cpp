@@ -12,14 +12,11 @@ class Solution {
             return false;
         }
 
-        bool result = false;
-
-        if (head->val == root->val) {
-            result = dfs(head, root);
+        if (head->val == root->val && dfs(head, root)) {
+            return true;
         }
 
-        return result || isSubPath(head, root->left) ||
-               isSubPath(head, root->right);
+        return isSubPath(head, root->left) || isSubPath(head, root->right);
     }
 
     bool dfs(ListNode* head, TreeNode* root) {
