@@ -11,13 +11,13 @@ class Solution {
         // What this means for this problem is that if we keep track of a
         // prefix XOR vector then to unapply certain parts of it, we just need
         // to remove the queries we dont want
-        std::vector<int> rs(arr.size(), 0);
+        std::vector<int> prefix(arr.size(), 0);
 
         for (int i = 0; i < arr.size(); i++) {
             if (i == 0) {
-                rs[i] = arr[i];
+                prefix[i] = arr[i];
             } else {
-                rs[i] = rs[i - 1] ^ arr[i];
+                prefix[i] = prefix[i - 1] ^ arr[i];
             }
         }
 
@@ -25,10 +25,10 @@ class Solution {
             int start = queries[i][0];
             int end = queries[i][1];
 
-            result[i] = rs[end];
+            result[i] = prefix[end];
 
             if (start > 0) {
-                result[i] ^= rs[start - 1];
+                result[i] ^= prefix[start - 1];
             }
         }
 
