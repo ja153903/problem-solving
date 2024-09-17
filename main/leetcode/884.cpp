@@ -13,7 +13,6 @@ class Solution {
         auto s1_by_whitespace = split_by(s1, " ");
         auto s2_by_whitespace = split_by(s2, " ");
 
-        // find all the strings that only occur once
         for (const auto& s : s1_by_whitespace) {
             counter[s]++;
         }
