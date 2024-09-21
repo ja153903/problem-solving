@@ -30,3 +30,16 @@ std::vector<std::string> split_by(std::string s, std::string delimiter) {
 
     return parts;
 }
+
+std::string join(std::vector<std::string> ss, std::string delimiter) {
+    std::string res;
+
+    for (int i = 0; i < ss.size(); i++) {
+        res += ss[i];
+        if (i < ss.size() - 1) {
+            res += delimiter;
+        }
+    }
+
+    return res;
+}
